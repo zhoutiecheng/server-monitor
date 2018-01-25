@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.zhoutc.com/schema/monitor"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:beans="http://www.springframework.org/schema/beans"
+            targetNamespace="http://www.zhoutc.com/schema/monitor"
+            elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+    <xsd:element name="reporter">
+        <xsd:complexType>
+            <xsd:attribute name="id" type="xsd:ID"/>
+            <xsd:attribute name="zk-url" type="xsd:string" use="required"/>
+            <xsd:attribute name="group" type="xsd:string" use="required"/>
+            <xsd:attribute name="application" type="xsd:string" use="required"/>
+            <xsd:attribute name="followers" type="xsd:string" use="required"/>
+            <xsd:attribute name="interval" type="xsd:long" use="optional"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="monitor">
+        <xsd:complexType>
+            <xsd:attribute name="id" type="xsd:ID"/>
+            <xsd:attribute name="zk-url" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
